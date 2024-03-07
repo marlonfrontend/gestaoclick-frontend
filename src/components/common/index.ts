@@ -1,2 +1,2 @@
-export * from './AppHeader.vue'
-export * from './AppFooter.vue'
+export { default as AppPostCard } from './AppPostCard.vue'
+export { default as AppPostList } from './AppPostList.vue'
