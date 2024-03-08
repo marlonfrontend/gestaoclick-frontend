@@ -2,9 +2,7 @@
 
 <template>
   <footer class="footer">
-    <div class="container">
-      <span>Copyright 2024</span>
-    </div>
+    <span>Copyright 2024</span>
   </footer>
 </template>
 
