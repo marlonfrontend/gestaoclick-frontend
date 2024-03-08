@@ -1,15 +1,28 @@
 <script setup lang="ts">
 import { AppPostCard } from "@/components/common";
+import { onMounted } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const fetchPosts = () => {
+  store.dispatch("fetchPosts");
+};
+
+onMounted(() => {
+  fetchPosts();
+});
 </script>
 
 <template>
   <div class="post-list">
     <AppPostCard
-      v-for="i in 5"
-      :key="i"
-      title="Guia completo de segurança da informação: conceito, pilares e tendências"
-      thumb="https://gestaoclick.com.br/wp-content/uploads/tomada-de-decisao.webp"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab nisi expedita dolorum numquam rerum alias id porro tempora vero. In doloremque cum culpa neque magni provident eveniet esse ad eligendi."
+      v-for="post in store.state.posts"
+      :key="post.id"
+      :id="post.id"
+      :title="post.title"
+      :thumb="`https://picsum.photos/id/${post.id}/400/300`"
+      :description="post.body"
     />
   </div>
 </template>
@@ -17,9 +30,16 @@ import { AppPostCard } from "@/components/common";
 <style lang="scss">
 .post-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 </style>
