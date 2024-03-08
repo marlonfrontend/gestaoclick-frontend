@@ -15,5 +15,5 @@ const errorImage = (e) => {
 </script>
 
 <template>
-  <img :src="src" :alt="alt" @error="errorImage" />
+  <img :src="src" v-lazy="{ src: src }" :alt="alt" @error="errorImage" />
 </template>
