@@ -26,7 +26,6 @@ defineProps({
       <RouterLink class="title" :to="`/posts/${id}`">
         {{ title }}
       </RouterLink>
-      <small>Fev 9, 2024 | Por Carolina Durval</small>
       <p class="description">
         {{ description }}
       </p>
