@@ -1,13 +1,11 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 
 const store = useStore();
 const router = useRouter();
 const { params } = useRoute();
-
-const author = ref(null);
 
 const fetchPost = async () => {
   store.dispatch("fetchPost", params.id);
