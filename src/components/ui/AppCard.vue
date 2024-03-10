@@ -1,7 +1,14 @@
-<script setup></script>
+<script setup>
+defineProps({
+  width: {
+    type: String,
+    default: () => "100%",
+  },
+});
+</script>
 
 <template>
-  <div class="app-card">
+  <div class="app-card" :style="`width: ${width}`">
     <slot />
   </div>
 </template>

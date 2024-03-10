@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div class="app-container">
     <slot />
@@ -11,5 +9,7 @@
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>

@@ -33,7 +33,7 @@ onMounted(() => {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   flex-wrap: wrap;
   gap: 20px;
-  padding: 40px;
+  padding: 40px 0;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
